@@ -61,10 +61,11 @@ public class LoginActivity extends BaseActivity implements ErrorDialogFragment.O
 
             mActivity.getApplication();
             Intent intent = new Intent(mContext, MainActivity.class);
-            if(mRemember.isChecked()){
+             if(mRemember.isChecked()){
                 mAuthManager.setToken(mContext, response.getToken());
             }
             //intent.putExtra("token", response.getToken());
+
             startActivity(intent);
             finish();
         }

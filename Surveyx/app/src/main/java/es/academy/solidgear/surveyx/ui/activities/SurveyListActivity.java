@@ -38,6 +38,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import es.academy.solidgear.surveyx.R;
+import es.academy.solidgear.surveyx.managers.AuthManager;
 import es.academy.solidgear.surveyx.model.GeofenceModel;
 import es.academy.solidgear.surveyx.model.SurveyModel;
 import es.academy.solidgear.surveyx.model.SurveysModel;
@@ -101,8 +102,8 @@ public class SurveyListActivity extends BaseActivity implements
 
         buildGoogleApiClient();
 
-        Bundle extras = getIntent().getExtras();
-        mToken = extras.getString("token", null);
+        AuthManager auth= AuthManager.getInstance(this);
+        mToken = auth.getToken();
 
         mQuestionnaireList = (RecyclerView) findViewById(R.id.questionnaireList);
 
