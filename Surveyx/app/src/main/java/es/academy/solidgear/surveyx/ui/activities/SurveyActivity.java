@@ -206,6 +206,7 @@ public class SurveyActivity extends BaseActivity implements ErrorDialogFragment.
         switch (view.getId()) {
             case R.id.buttonNext:
                 performNext();
+                mButtonNext.setEnabled(false);
                 break;
             case R.id.buttonCancel:
                 performCancel();
