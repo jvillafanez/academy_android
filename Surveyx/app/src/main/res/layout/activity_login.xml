@@ -39,9 +39,7 @@
             android:layout_marginRight="20dp"
             android:gravity="center_horizontal"
             android:orientation="vertical"
-            android:baselineAligned="true"
-            android:transitionGroup="false"
-            android:touchscreenBlocksFocus="false">
+            android:baselineAligned="true">
 
             <LinearLayout
                 android:orientation="horizontal"
@@ -97,21 +95,7 @@
 
             </LinearLayout>
 
-            <CheckBox
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Remember me"
-                android:id="@+id/RememberCheckBox"
-                android:textColor="@color/white"
-                android:checked="false"
-                android:visibility="visible"
-                android:textSize="15dp"
-                android:buttonTint="@color/accent_material_dark"
-                style="@style/AppTheme"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="20dp" />
-
-            <Button
+                <Button
                     style="@style/loginButton"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
@@ -119,7 +103,7 @@
                     android:textColor="@color/white"
                     android:id="@+id/login_button"
                     android:contentDescription="@string/descriptor_login_button"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="50dp"
                     android:layout_marginLeft="30dp"
                     android:layout_marginRight="30dp"
                     android:textSize="24dp" />
