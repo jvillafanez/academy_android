@@ -21,6 +21,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -106,6 +107,7 @@ public class SurveyListActivity extends BaseActivity implements
         mQuestionnaireList = (RecyclerView) findViewById(R.id.questionnaireList);
 
         mQuestionnaireList.setLayoutManager(new LinearLayoutManager(this));
+
     }
 
     protected void onResume() {
