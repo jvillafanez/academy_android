@@ -6,6 +6,7 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -17,6 +18,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.Volley;
 
 import es.academy.solidgear.surveyx.R;
+import es.academy.solidgear.surveyx.managers.AuthManager;
 import es.academy.solidgear.surveyx.model.LoginModel;
 import es.academy.solidgear.surveyx.services.requests.UserLoginRequest;
 import es.academy.solidgear.surveyx.ui.fragments.ErrorDialogFragment;
@@ -31,6 +33,8 @@ public class LoginActivity extends BaseActivity implements ErrorDialogFragment.O
     private Button mLoginButton;
     private EditText mUsername;
     private EditText mPassword;
+    private CheckBox mRemember;
+    private AuthManager mAuthManager;
 
     private LoginActivity mActivity = this;
     private Context mContext = this;
@@ -57,7 +61,10 @@ public class LoginActivity extends BaseActivity implements ErrorDialogFragment.O
 
             mActivity.getApplication();
             Intent intent = new Intent(mContext, MainActivity.class);
-            intent.putExtra("token", response.getToken());
+            if(mRemember.isChecked()){
+                mAuthManager.setToken(mContext, response.getToken());
+            }
+            //intent.putExtra("token", response.getToken());
             startActivity(intent);
             finish();
         }
@@ -75,6 +82,9 @@ public class LoginActivity extends BaseActivity implements ErrorDialogFragment.O
         mPassword = (EditText) findViewById(R.id.passLoginText);
         mLoginButton = (Button) findViewById(R.id.login_button);
         TextView sglogintext = (TextView) findViewById(R.id.sgLoginText);
+
+        mRemember = (CheckBox) findViewById(R.id.RememberCheckBox);
+        mAuthManager = new AuthManager();
 
         Typeface tf = Typeface.createFromAsset(getAssets(), "fonts/KGSecondChancesSketch.ttf");
         sglogintext.setTypeface(tf);
