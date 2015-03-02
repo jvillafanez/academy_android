@@ -94,7 +94,19 @@
                     android:hint="@string/login_pass_placeholder" />
 
             </LinearLayout>
-
+                <CheckBox
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Remember me"
+                    android:id="@+id/RememberCheckBox"
+                    android:textColor="@color/white"
+                    android:checked="false"
+                    android:visibility="visible"
+                    android:textSize="15dp"
+                    android:buttonTint="@color/accent_material_dark"
+                    style="@style/AppTheme"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="20dp" />
                 <Button
                     style="@style/loginButton"
                     android:layout_width="fill_parent"
@@ -103,7 +115,7 @@
                     android:textColor="@color/white"
                     android:id="@+id/login_button"
                     android:contentDescription="@string/descriptor_login_button"
-                    android:layout_marginTop="50dp"
+                    android:layout_marginTop="20dp"
                     android:layout_marginLeft="30dp"
                     android:layout_marginRight="30dp"
                     android:textSize="24dp" />
@@ -116,7 +128,6 @@
                 android:layout_marginTop="10dp"
                 android:visibility="invisible"
                 android:layout_gravity="center_horizontal" />
-
         </LinearLayout>
 
 
