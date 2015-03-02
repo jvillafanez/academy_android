@@ -46,9 +46,13 @@ public class SurveyFragment extends Fragment implements RadioGroup.OnCheckedChan
     private SurveyFragment mFragment = this;
     private SurveyActivity mActivity;
 
+    private boolean mIsRequired = false;
+
     Response.Listener<QuestionModel> mListener = new Response.Listener<QuestionModel>() {
         @Override
         public void onResponse(QuestionModel question) {
+
+
             mFragment.showQuestion(question);
         }
     };
@@ -154,6 +158,12 @@ public class SurveyFragment extends Fragment implements RadioGroup.OnCheckedChan
             paddingView.setLayoutParams(PADDING_LAYOUT_PARAMS);
             mAnswersOutlet.addView(paddingView);
 
+        }
+
+        mIsRequired = currentQuestion.isRequired();
+
+        if (mIsRequired == false) {
+            mActivity.enableButton(true);
         }
     }
 
