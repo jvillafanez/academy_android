@@ -5,10 +5,12 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import es.academy.solidgear.surveyx.R;
+import es.academy.solidgear.surveyx.managers.AuthManager;
 
 
 public class MainActivity extends Activity {
 
+    AuthManager authManager= new AuthManager();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,18 +21,14 @@ public class MainActivity extends Activity {
     protected void onResume() {
         super.onResume();
 
-        Bundle extras = getIntent().getExtras();
-        String token = null;
-        if (extras != null) {
-            token = extras.getString("token", null); /** TODO: Read token when it will be stored **/
-        }
+        AuthManager auth= AuthManager.getInstance(this);
+        String mToken = auth.getToken();
 
-        if (token == null) {
+        if (mToken== null ) {
             Intent intent = new Intent(this, LoginActivity.class);
             startActivity(intent);
         } else {
             Intent intent = new Intent(this, SurveyListActivity.class);
-            intent.putExtra("token", token);
             startActivity(intent);
         }
 
