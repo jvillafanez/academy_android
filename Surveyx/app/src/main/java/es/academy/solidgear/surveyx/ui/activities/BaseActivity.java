@@ -21,4 +21,5 @@ public class BaseActivity extends ActionBarActivity {
         Typeface typeFace = Typeface.createFromAsset(getAssets(), "fonts/KGSecondChancesSketch.ttf");
         textViewTitle.setTypeface(typeFace);
     }
+
 }

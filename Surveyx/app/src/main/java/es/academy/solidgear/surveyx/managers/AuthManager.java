@@ -23,16 +23,16 @@ public class AuthManager {
     }
 
     public void setToken(Context ctx, String token){
-        SharedPreferences sp = ctx.getSharedPreferences("Preferencias",Context.MODE_PRIVATE);
+        SharedPreferences sp = ctx.getSharedPreferences("Preferences",Context.MODE_PRIVATE);
         SharedPreferences.Editor edit = sp.edit();
         edit.clear();
         edit.putString("Token",token);
         edit.commit();
         }
     public String getToken(){
-        SharedPreferences prefs = mActivity.getSharedPreferences("preferences", Context.MODE_PRIVATE);
+        SharedPreferences prefs = mActivity.getSharedPreferences("Preferences", Context.MODE_PRIVATE);
 
-        String token = prefs.getString("token", null);
+        String token = prefs.getString("Token", null);
         return token;
     }
 

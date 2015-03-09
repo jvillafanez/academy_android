@@ -26,6 +26,8 @@ import es.academy.solidgear.surveyx.ui.fragments.ErrorDialogFragment;
 /**
  * Created by Siro on 10/12/2014.
  */
+
+
 public class LoginActivity extends BaseActivity implements ErrorDialogFragment.OnClickClose, View.OnClickListener {
     private static final String AUTH_ERROR = "com.android.volley.AuthFailureError";
 
@@ -43,7 +45,7 @@ public class LoginActivity extends BaseActivity implements ErrorDialogFragment.O
         @Override
         public void onErrorResponse(VolleyError error) {
             if (error.toString().equals(AUTH_ERROR)) {
-                Toast.makeText(mContext, getString(R.string.incorrect_login), Toast.LENGTH_LONG).show();
+                Toast.makeText(mContext, "Incorrect Login", Toast.LENGTH_LONG).show();
             } else {
                 ErrorDialogFragment errorDialog = ErrorDialogFragment.newInstance(error.toString());
                 android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
