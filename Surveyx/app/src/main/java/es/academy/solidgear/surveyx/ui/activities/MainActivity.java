@@ -17,6 +17,9 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
     }
 
+//  Register as a receiver
+
+
     @Override
     protected void onResume() {
         super.onResume();
@@ -32,7 +35,9 @@ public class MainActivity extends Activity {
             startActivity(intent);
         }
 
+
         finish();
     }
+
 
 }
