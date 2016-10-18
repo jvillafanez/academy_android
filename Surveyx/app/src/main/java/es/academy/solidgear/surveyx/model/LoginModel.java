@@ -16,8 +16,13 @@ public class LoginModel {
 
 }
 
-
+/**
+ * Class to model login data
+ */
 class LoginData {
+    /**
+     * token to identify an user
+     */
     private String token;
     private String username;
 
