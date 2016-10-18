@@ -21,7 +21,7 @@ public class LoginModel {
  */
 class LoginData {
     /**
-     * token to identify an user
+     * token to identify a user
      */
     private String token;
     private String username;
